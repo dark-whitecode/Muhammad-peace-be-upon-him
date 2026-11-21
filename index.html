@@ -1,50 +1,260 @@
 <!DOCTYPE html>
+<!-- The language tag helps screen readers and translation tools. -->
 <html lang="en">
-    <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-     <link rel="stylesheet" href="Muhammad.css"> 
-     <title>Prohet Muhammad</title> 
-    </head>
-    <body>
-        <h1><b>Prophet Muhammad peace be upon him</b></h1>
-        <img src="Muhammad.jpg" alt="My favourite prophet Allah Bless Muhammad" width="450" height="450">
-        
-        <hr>
 
-        <a href="https://en.wikipedia.org/wiki/Muhammad" target="_blank" title="Allah bless Muhammad" >
-            Click here to clue in more about the Prophet Muhammad peace be upon him
-        </a>
-        
-        <p>
-            <mark>Muhammad[a] (c. 570 CE – 8 June 632 CE)[b]</mark> was an Arab religious, military, and political leader, and the founder of Islam.[c] According to Islam, he was the final prophet of God who was divinely inspired to preach and confirm the monotheistic teachings of 
-            <mark>Adam, 
-            Noah, 
-            Abraham, 
-            Moses, 
-            Jesus,</mark>
-             and other prophets in Islam.<b> He is believed by Muslims to be the Seal of the Prophets</b>,
-              and along with the Quran,
-               his teachings and normative examples form the basis for Islamic religious belief.
-        <br>
-        According to the traditional account,
-        <mark>[1][2][3] Muhammad was born in Mecca to the aristocratic Banu Hashim clan of the Quraysh.</mark>
-         He was <mark>the son of Abdullah ibn Abd al-Muttalib and Amina bint Wahb.</mark> His father, Abdullah,
-          the son of tribal leader Abd al-Muttalib ibn Hashim, died around the time Muhammad was born. <i>His mother Amina died when he was six,</i> leaving Muhammad an orphan.
-           He was raised under the care of his grandfather, Abd al-Muttalib,
-            and paternal uncle, Abu Talib. In later years, he would periodically seclude himself <mark>in a mountain cave named Hira for several nights of prayer.</mark>
-             When he was 40, <mark>in c. 610, Muhammad reported being visited by Gabriel in the cave and receiving his first revelation from God.<> In 613,[4] Muhammad started preaching these revelations publicly,[5] proclaiming that "God is One", that complete "submission" (Islām) to God (Allāh) is the right way of life (dīn),[6] and that he was a prophet and messenger of God, similar to other prophets in Islam.[7]
-        <br>
-         Muhammad's followers were initially few in number, 
-         and experienced persecution by Meccan polytheists for 13 years. 
-         To escape ongoing persecution, he sent some of his followers to the Aksumite Empire in 615, before he and his followers migrated from Mecca to Medina (then known as Yathrib) later in 622.
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the page fit phone screens instead of shrinking a desktop layout. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prophet Muhammad ﷺ</title>
 
-          This event, the Hijrah, marks the beginning of the Islamic calendar, also known as the Hijri calendar. In Medina, Muhammad united the tribes under the Constitution of Medina. In December 629, after eight years of intermittent fighting with Meccan tribes, Muhammad gathered an army of 10,000 Muslim converts and marched on the city of Mecca. 
-          The conquest went largely uncontested, and Muhammad seized the city with minimal casualties. <mark>In 632,</mark>
-           a few months after returning from the Farewell Pilgrimage, he fell ill and died. By the time of his death, most of the Arabian Peninsula had converted to Islam.
-        <br>
-        The revelations (waḥy) that Muhammad reported 
-        receiving until his death form the verses (āyah) of the Quran, upon which Islam is based, and are regarded by Muslims as the verbatim word of God and his final revelation.
-         Besides the Quran, Muhammad's teachings and practices, found in transmitted reports, known as hadith, and in his biography (sīrah), are also upheld and used as sources of Islamic law.
-          Apart from Islam, Muhammad plays a significant role in the Druze faith as one of the seven main prophets, and in the Baháʼí Faith as a Manifestation of God</p>
-    </body>
+  <!-- Two Google Fonts:
+       Amiri       = elegant serif for headings and Arabic calligraphy
+       Figtree     = clean sans-serif for easy reading of long text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Your own stylesheet (all the colours, spacing and animation live there). -->
+  <link rel="stylesheet" href="Muhammad.css">
+</head>
+
+<body>
+
+  <!-- Lets keyboard users jump straight past the menu. Hidden until focused. -->
+  <a class="skip-link" href="#story">Skip to the story</a>
+
+  <!-- ============ TOP MENU ============ -->
+  <!-- <nav> tells browsers "this is navigation". Each link jumps to a section id below. -->
+  <nav class="top-nav" aria-label="Page sections">
+    <a href="#story">Story</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#watch">Watch</a>
+    <a href="#legacy">Legacy</a>
+  </nav>
+
+  <!-- ============ HERO (the first thing people see) ============ -->
+  <header class="hero">
+    <!-- A crescent moon drawn only with CSS. aria-hidden = screen readers skip it (it's decoration). -->
+    <div class="crescent" aria-hidden="true"></div>
+
+    <!-- Arabic calligraphy text: lang="ar" + dir="rtl" make it read right-to-left correctly. -->
+    <p class="calligraphy" lang="ar" dir="rtl">محمد ﷺ</p>
+
+    <!-- Only ONE <h1> per page. It's the main title. -->
+    <h1>Prophet Muhammad <span class="pbuh">peace be upon him</span></h1>
+
+    <p class="lead">
+      Born in Mecca around 570 CE, the final prophet in Islam and the founder of a faith
+      that today shapes the lives of well over a billion people.
+    </p>
+
+    <!-- Scroll-down cue. -->
+    <a class="scroll-cue" href="#story">Read the story</a>
+
+    <!--
+      Your old <img src="Muhammad.jpg"> was removed because many Muslims prefer not to
+      depict the Prophet. If your picture is calligraphy or a mosque, add it back like this:
+
+      <img class="hero-image" src="Muhammad.jpg" alt="Describe what the picture shows"
+           width="200" height="200">
+    -->
+  </header>
+
+  <!-- <main> wraps the unique content of the page. -->
+  <main>
+
+    <!-- ============ QUICK FACTS ============ -->
+    <!-- <dl> = description list: pairs of "term" (dt) and "detail" (dd). Perfect for facts. -->
+    <section class="facts" aria-label="Quick facts">
+      <dl>
+        <div>
+          <dt>Born</dt>
+          <dd>c. 570 CE, Mecca</dd>
+        </div>
+        <div>
+          <dt>Died</dt>
+          <dd>8 June 632 CE</dd>
+        </div>
+        <div>
+          <dt>Clan</dt>
+          <dd>Banu Hashim of the Quraysh</dd>
+        </div>
+        <div>
+          <dt>Known as</dt>
+          <dd>Seal of the Prophets</dd>
+        </div>
+      </dl>
+    </section>
+
+  <!---Split the story--->
+    <section id="story" class="prose">
+      <h2>Who he was</h2>
+      <p>
+        Muhammad was an Arab religious, military, and political leader, and the founder of Islam.
+        According to Islam, he was the final prophet of God, divinely inspired to preach and confirm
+        the monotheistic teachings of <mark>Adam, Noah, Abraham, Moses, Jesus</mark> and other
+        prophets in Islam.
+      </p>
+      <!-- <strong> means "this is important" (better than <b>, which only means "bold"). -->
+      <p>
+        <strong>He is believed by Muslims to be the Seal of the Prophets.</strong>
+        Along with the Quran, his teachings and normative examples form the basis for Islamic
+        religious belief.
+      </p>
+
+      <h2>Early life</h2>
+      <p>
+        According to the traditional account, Muhammad was born in Mecca to the aristocratic
+        <mark>Banu Hashim clan of the Quraysh</mark>. He was the son of Abdullah ibn Abd al-Muttalib
+        and Amina bint Wahb. His father died around the time Muhammad was born.
+      </p>
+      <!-- <em> = emphasis (italic), used for the emotional moment. -->
+      <p>
+        <em>His mother Amina died when he was six,</em> leaving Muhammad an orphan. He was raised
+        under the care of his grandfather, Abd al-Muttalib, and later his paternal uncle, Abu Talib.
+      </p>
+
+      <h2>The first revelation</h2>
+      <p>
+        In later years, he would periodically seclude himself in a mountain cave named
+        <mark>Hira</mark> for several nights of prayer. When he was 40, in c. 610, Muhammad reported
+        being visited by Gabriel in the cave and receiving his first revelation from God.
+      </p>
+      <blockquote>
+        In 613, Muhammad started preaching publicly, proclaiming that “God is One”, and that
+        complete “submission” (<i lang="ar">Islām</i>) to God (<i lang="ar">Allāh</i>) is the right
+        way of life (<i lang="ar">dīn</i>).
+      </blockquote>
+      <p>
+        He said he was a prophet and messenger of God, similar to other prophets in Islam.
+      </p>
+
+      <h2>Persecution and migration</h2>
+      <p>
+        Muhammad’s followers were initially few in number, and experienced persecution by Meccan
+        polytheists for 13 years. To escape it, he sent some of his followers to the Aksumite Empire
+        in 615, before he and his followers migrated from Mecca to Medina (then known as Yathrib)
+        in 622.
+      </p>
+      <p>
+        This event, the <strong>Hijrah</strong>, marks the beginning of the Islamic calendar, also
+        known as the Hijri calendar. In Medina, Muhammad united the tribes under the Constitution of
+        Medina.
+      </p>
+
+      <h2>Return to Mecca</h2>
+      <p>
+        In December 629, after eight years of intermittent fighting with Meccan tribes, Muhammad
+        gathered an army of 10,000 Muslim converts and marched on the city of Mecca. The conquest
+        went largely uncontested, and he seized the city with minimal casualties.
+      </p>
+      <p>
+        In 632, a few months after returning from the Farewell Pilgrimage, he fell ill and died.
+        By the time of his death, most of the Arabian Peninsula had converted to Islam.
+      </p>
+    </section>
+
+    <!-- ============ TIMELINE ============ -->
+   
+    <section id="timeline" class="timeline-section">
+      <h2>His life at a glance</h2>
+      <ol class="timeline">
+        <li>
+          <strong class="year">c. 570</strong>
+          <p>Born in Mecca, into the Banu Hashim clan.</p>
+        </li>
+        <li>
+          <strong class="year">c. 576</strong>
+          <p>His mother Amina dies; he is raised by his grandfather and then his uncle.</p>
+        </li>
+        <li>
+          <strong class="year">c. 610</strong>
+          <p>At age 40, receives his first revelation in the cave of Hira.</p>
+        </li>
+        <li>
+          <strong class="year">613</strong>
+          <p>Begins preaching publicly in Mecca.</p>
+        </li>
+        <li>
+          <strong class="year">615</strong>
+          <p>Sends some followers to the Aksumite Empire to escape persecution.</p>
+        </li>
+        <li>
+          <strong class="year">622</strong>
+          <p>The Hijrah: migration from Mecca to Medina. Year 1 of the Islamic calendar.</p>
+        </li>
+        <li>
+          <strong class="year">629</strong>
+          <p>Marches on Mecca with 10,000 followers; the city is taken with minimal casualties.</p>
+        </li>
+        <li>
+          <strong class="year">632</strong>
+          <p>Returns from the Farewell Pilgrimage, falls ill, and dies on 8 June.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ VIDEO ============ -->
+    <section id="watch" class="watch">
+      <h2>Watch: How Islam began</h2>
+      <p class="watch-intro">A ten-minute overview of how the story unfolded.</p>
+
+     >
+      <video controls muted playsinline preload="metadata">
+        <source src="How%20Islam%20Began%20-%20In%20Ten%20Minutes.mp4" type="video/mp4">
+        <!-- Shown only if the browser can't play video at all. -->
+        Your browser can’t play this video.
+        <a href="How%20Islam%20Began%20-%20In%20Ten%20Minutes.mp4">Download it instead.</a>
+      </video>
+    </section>
+
+    <!-- ============ LEGACY ============ -->
+    <section id="legacy" class="prose">
+      <h2>His legacy</h2>
+      <p>
+        The revelations (<i lang="ar">waḥy</i>) that Muhammad reported receiving until his death form
+        the verses (<i lang="ar">āyah</i>) of the Quran, upon which Islam is based. Muslims regard
+        them as the verbatim word of God and his final revelation.
+      </p>
+      <p>
+        Beyond the Quran, his teachings and practices are also upheld and used as sources of Islamic
+        law. Apart from Islam, Muhammad plays a significant role in the Druze faith as one of the
+        seven main prophets, and in the Baháʼí Faith as a Manifestation of God.
+      </p>
+
+      <h3>Key terms</h3>
+      <details>
+        <summary>Quran</summary>
+        <p>The book of revelations Muhammad reported receiving until his death.</p>
+      </details>
+      <details>
+        <summary>Hadith</summary>
+        <p>Transmitted reports of Muhammad’s teachings and practices.</p>
+      </details>
+      <details>
+        <summary>Sīrah</summary>
+        <p>The biography of Muhammad.</p>
+      </details>
+      <details>
+        <summary>Hijrah</summary>
+        <p>The 622 migration from Mecca to Medina that begins the Islamic calendar.</p>
+      </details>
+
+      <!-- rel="noopener" is a security habit for links that open a new tab (target="_blank").
+           The link text now says where you're going, instead of "Click here". -->
+      <a class="button" href="https://en.wikipedia.org/wiki/Muhammad" target="_blank" rel="noopener"
+         title="Read the full Wikipedia article on Muhammad">
+        Read more on Wikipedia
+      </a>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <p>Text adapted from the Wikipedia article “Muhammad”, available under CC BY-SA.</p>
+  </footer>
+
+</body>
+</html>
